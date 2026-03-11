@@ -3,16 +3,16 @@ package com.java.fundamentals;
 import java.util.Scanner;
 
 public class ProductMembershipAssignment {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter The Name Of The Customer: ");
-        char name;
-        name = scanner.next().charAt(0);
+        System.out.println("Enter The ID Of The Customer: ");
+        short id;
+        id = scanner.nextShort();
 
         System.out.println("Enter The phone Number Of The Customer: ");
         long number;
-        number= scanner.nextLong();
+        number = scanner.nextLong();
 
         System.out.println("Enter The Product Price: ");
         long price;
@@ -30,151 +30,52 @@ public class ProductMembershipAssignment {
         int age;
         age = scanner.nextInt();
 
-        System.out.println("Name= " +name);
-        System.out.println("Phone Number: "+number);
-        System.out.println("Membership: "+membership);
-        System.out.println("Age: "+age);
 
-        if(membership =='S' || age>=50 ){
-            System.out.println("Discount: 10% and Shipping Charges: ₹50 ");
-            long discount = 10;
-            discount = price*discount/100;
-            System.out.println("Discount Amount: "+discount);
+        int discountPercentage;
 
-            long discountPrice;
-            discountPrice = price-discount;
-            System.out.println("Discount Price: "+discountPrice);
-
-            long centalTaxAmount, CentalTax=(long)2.5;
-            centalTaxAmount = CentalTax * discountPrice/ 100;
-            System.out.println("centralTax: " + centalTaxAmount);
-
-            long stateTaxAmounht, StateTax =(long)2.5;
-            stateTaxAmounht = StateTax *discountPrice/100;;
-            System.out.println("State Tax: "+ stateTaxAmounht);
-
-            long finalPrice;
-            finalPrice=discountPrice + stateTaxAmounht + centalTaxAmount;
-            System.out.println("Final Price: "+finalPrice);
-
-            long savedAmount;
-            savedAmount=price-finalPrice;
-            System.out.println("The Amount Saved On The Product: "+savedAmount);
-
-            long finalbill;
-            finalbill = (finalPrice*quantity)+50;
-            System.out.println("The Final Bill With Shipping Charges: "+finalbill);
-
-            long totalSavedMoney;
-            totalSavedMoney = savedAmount*quantity;
-            System.out.println("Total Saved Amount: "+savedAmount);
-
-
-        } else if (membership =='G' || age>50) {
-            System.out.println("Discount: 15% and Shipping Charges: ₹20 ");
-            long discount = 15;
-            discount = price*discount/100;
-            System.out.println("Discount Amount: "+discount);
-
-            long discountPrice;
-            discountPrice = price-discount;
-            System.out.println("Discount Price: "+discountPrice);
-
-            long centalTaxAmount, CentalTax=(long)2.5;
-            centalTaxAmount = CentalTax * discountPrice/ 100;
-            System.out.println("centralTax: " + centalTaxAmount);
-
-            long stateTaxAmounht, StateTax =(long)2.5;
-            stateTaxAmounht = StateTax *discountPrice/100;;
-            System.out.println("State Tax: "+ stateTaxAmounht);
-
-            long finalPrice;
-            finalPrice=discountPrice + stateTaxAmounht + centalTaxAmount;
-            System.out.println("Final Price: "+finalPrice);
-
-            long savedAmount;
-            savedAmount=price-finalPrice;
-            System.out.println("The Amount Saved On The Product: "+savedAmount);
-
-            long finalbill;
-            finalbill = (finalPrice*quantity)+20;
-            System.out.println("The Final Bill With Shipping Charges: "+finalbill);
-
-            long totalSavedMoney;
-            totalSavedMoney = savedAmount*quantity;
-            System.out.println("Total Saved Amount: "+savedAmount);
-
-
-        } else if (membership == 'D'|| age>=50) {
-            System.out.println("Discount: 20% and shipping Charges: ₹0 ");
-            long discount = 20;
-            discount = price*discount/100;
-            System.out.println("Discount Ammount: "+discount);
-
-            long discountPrice;
-            discountPrice = price-discount;
-            System.out.println("Discount Price: "+discountPrice);
-
-            long centalTaxAmount, CentalTax=(long)2.5;
-            centalTaxAmount = CentalTax * discountPrice/ 100;
-            System.out.println("centralTax: " + centalTaxAmount);
-
-            long stateTaxAmounht, StateTax =(long)2.5;
-            stateTaxAmounht = StateTax *discountPrice/100;;
-            System.out.println("State Tax: "+ stateTaxAmounht);
-
-            long finalPrice;
-            finalPrice=discountPrice + stateTaxAmounht + centalTaxAmount;
-            System.out.println("Final Price: "+finalPrice);
-
-            long savedAmount;
-            savedAmount=price-finalPrice;
-            System.out.println("The Amount Saved On The Product: "+savedAmount);
-
-            long finalbill;
-            finalbill = finalPrice*quantity;
-            System.out.println("The Final Bill Is: "+finalbill);
-
-            long totalSavedMoney;
-            totalSavedMoney = savedAmount*quantity;
-            System.out.println("Total Saved Amount: "+savedAmount);
-
-
-        }else{
-            System.out.println("Customer Dose Not Have Membership");
-            long discount = 0;
-            discount = 0;
-            System.out.println("Discount Amount: "+discount);
-
-            long discountPrice;
-            discountPrice = price-discount;
-            System.out.println("Discount Price: "+discountPrice);
-
-            long centalTaxAmount, CentalTax=(long)2.5;
-            centalTaxAmount = CentalTax * discountPrice/ 100;
-            System.out.println("centralTax: " + centalTaxAmount);
-
-            long stateTaxAmounht, StateTax =(long)2.5;
-            stateTaxAmounht = StateTax *discountPrice/100;;
-            System.out.println("State Tax: "+ stateTaxAmounht);
-
-            long finalPrice;
-            finalPrice=discountPrice + stateTaxAmounht + centalTaxAmount;
-            System.out.println("Final Price: "+finalPrice);
-
-            long savedAmount;
-            savedAmount=price-finalPrice;
-            System.out.println("The Amount Saved On The Product: "+savedAmount);
-
-            long finalbill;
-            finalbill = finalPrice*quantity;
-            System.out.println("The Final Bill Is: "+finalbill);
-
-            long totalSavedMoney;
-            totalSavedMoney = savedAmount*quantity;
-            System.out.println("Total Saved Amount: "+savedAmount);
-
+        if (membership == 'S' && age >= 25) {
+            discountPercentage = 10;
+        } else if (membership == 'G' && age >= 40) {
+            discountPercentage = 15;
+        } else if (membership == 'D' && age >= 55) {
+            discountPercentage = 20;
         }
+        else
+            discountPercentage = 0;
+        long discountAmount;
+        discountAmount = price * discountPercentage/100;
+        long discountPrice;
+        discountPrice = price - discountAmount;
+        double stateTax;
+        stateTax = 2.5;
+        long stateTaxAmount;
+        stateTaxAmount = (long) (discountAmount * stateTax) /100;
+        double centralTax;
+        centralTax = 2.5;
+        long centralTaxAmount;
+        centralTaxAmount = (long)(discountAmount * centralTax)/100;
+        long finalPrice;
+        finalPrice = discountPrice + centralTaxAmount + stateTaxAmount;
+        long savedAmount;
+        savedAmount = price - finalPrice;
+        long finalBill;
+        finalBill = finalPrice * quantity;
+        long totalAmountSaved;
+        totalAmountSaved = savedAmount * quantity;
+
+        System.out.println("Name= " +id);
+        System.out.println("Phone Number: " + number);
+        System.out.println("Membership: " + membership);
+        System.out.println("Age: " + age);
+        System.out.println("Discount Percentage: " +discountPercentage);
+        System.out.println("Discount Amount: "+discountAmount);
+        System.out.println("DisCount Price: " +discountPrice);
+        System.out.println("State Tax: " +stateTaxAmount);
+        System.out.println("Central Tax: "+centralTaxAmount);
+        System.out.println("final Price: " +finalPrice);
+        System.out.println("Amount Saved: "+savedAmount);
+        System.out.println("final Bill: "+finalBill);
+        System.out.println("Total Amount Saved: "+totalAmountSaved);
         scanner.close();
     }
 }
